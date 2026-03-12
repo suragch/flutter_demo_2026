@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/ui/settings/settings_manager.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -8,6 +9,8 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  final manager = SettingsManager();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,11 +35,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return await showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        content: SegmentedButton(segments: [
-          ButtonSegment(value: ThemeMode.light),
-          ButtonSegment(value: ThemeMode.system),
-          ButtonSegment(value: ThemeMode.dark),
-        ], selected: (newTheme) => theme = newTheme,
+        content: SegmentedButton<ThemeMode>(
+          segments: [
+            ButtonSegment(value: ThemeMode.light, icon: Icon(Icons.light_mode)),
+            ButtonSegment(
+              value: ThemeMode.system,
+              icon: Icon(Icons.smartphone),
+            ),
+            ButtonSegment(value: ThemeMode.dark, icon: Icon(Icons.dark_mode)),
+          ],
+          selected: {manager.currentTheme},
+          onSelectionChanged: (Set<ThemeMode> selection) {
+            manager.setTheme(selection.first);
+            Navigator.of(context).pop();
+          },
+        ),
       ),
     );
   }

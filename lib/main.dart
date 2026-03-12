@@ -18,15 +18,28 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final appState = getIt<AppState>();
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
-      home: const HomeScreen(),
+    return ListenableBuilder(
+      listenable: appState,
+      builder: (context, child) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          // TODO: apply a light theme and dark theme
+          theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
+          home: const HomeScreen(),
+        );
+      },
     );
   }
 }
