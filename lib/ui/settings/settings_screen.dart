@@ -17,9 +17,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ListTile(
             title: Text('Theme'),
             subtitle: Text('Light mode'),
-            onTap: () {},
+            onTap: () async {
+              final theme = await _showThemeDialog();
+            },
           ),
         ],
+      ),
+    );
+  }
+
+  ThemeMode theme = ThemeMode.system;
+
+  Future<ThemeMode?> _showThemeDialog() async {
+    return await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: SegmentedButton(segments: [
+          ButtonSegment(value: ThemeMode.light),
+          ButtonSegment(value: ThemeMode.system),
+          ButtonSegment(value: ThemeMode.dark),
+        ], selected: (newTheme) => theme = newTheme,
       ),
     );
   }

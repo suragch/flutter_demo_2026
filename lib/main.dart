@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/app_state.dart';
 import 'package:flutter_demo/services/auth/auth.dart';
 import 'package:flutter_demo/services/local_storage/local_storage.dart';
 import 'package:flutter_demo/services/service_locator.dart';
@@ -13,6 +14,7 @@ Future<void> main() async {
   setupServiceLocator();
   await getIt<LocalStorage>().init();
   await getIt<Auth>().init();
+  await getIt<AppState>().init();
   runApp(const MyApp());
 }
 
