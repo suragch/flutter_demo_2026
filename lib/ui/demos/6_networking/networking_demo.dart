@@ -19,6 +19,13 @@ class _NetworkingDemoState extends State<NetworkingDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ValueListenableBuilder(
+              valueListenable: manager.catNotifier,
+              builder: (context, catFacts, child) {
+                return Text(catFacts, textAlign: TextAlign.center);
+              },
+            ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 manager.getRequest();
