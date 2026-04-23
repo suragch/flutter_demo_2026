@@ -22,7 +22,6 @@ Future<void> main() async {
   // TODO: fix firebase
   // await getIt<Auth>().init();
   await getIt<AppState>().init();
-  await getIt<DatabaseHelper>().init();
   runApp(const MyApp());
 }
 
