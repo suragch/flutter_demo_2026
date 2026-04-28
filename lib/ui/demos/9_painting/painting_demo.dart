@@ -18,22 +18,22 @@ class _PaintingDemoState extends State<PaintingDemo> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(),
-      body: Center(
-        child: Container(
-          // color: Colors.cyan,
-          child: ProgressBar(
-            barColor: Colors.blue,
-            thumbColor: Colors.red,
-            thumbSize: 20.0,
-          ),
-        ),
-      ),
       // body: Center(
       //   child: Container(
-      //     decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
-      //     child: CustomPaint(size: Size(300, 300), painter: MyPainter()),
+      //     // color: Colors.cyan,
+      //     child: ProgressBar(
+      //       barColor: Colors.blue,
+      //       thumbColor: Colors.red,
+      //       thumbSize: 20.0,
+      //     ),
       //   ),
       // ),
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
+          child: CustomPaint(size: Size(300, 300), painter: MyPainter()),
+        ),
+      ),
     );
   }
 }
