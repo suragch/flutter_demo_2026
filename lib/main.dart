@@ -5,6 +5,7 @@ import 'package:flutter_demo/services/service_locator.dart';
 import 'package:flutter_demo/theme.dart';
 import 'package:flutter_demo/ui/demos/11_animations/animations_demo.dart';
 import 'package:flutter_demo/ui/demos/12_permissions/permissions_demo.dart';
+import 'package:flutter_demo/ui/demos/13_localization/localization_demo.dart';
 import 'package:flutter_demo/ui/demos/2_widget_layout/widgets_layout_demo.dart';
 import 'package:flutter_demo/ui/demos/3_state_managment/state_management_demo.dart';
 import 'package:flutter_demo/ui/demos/4_user_login/login_screen.dart';
@@ -209,6 +210,19 @@ class HomeScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const PermissionsDemo(),
+                ),
+              );
+            },
+          ),
+
+          ListTile(
+            title: const Text("13. Localization"),
+            leading: const Icon(Icons.code),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LocalizationDemo(),
                 ),
               );
             },

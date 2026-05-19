@@ -20,8 +20,11 @@ dependencies:
   sqlite3: ^3.3.1
   path_provider: ^2.1.5
   path: ^1.9.1
-  http: ^1.6.0
+  http: ^1.6.0 
   geolocator: ^14.0.2
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:
@@ -32,3 +35,4 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
