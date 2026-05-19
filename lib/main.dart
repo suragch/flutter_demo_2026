@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/app_state.dart';
+import 'package:flutter_demo/l10n/app_localizations.dart';
 import 'package:flutter_demo/services/local_storage/local_storage.dart';
 import 'package:flutter_demo/services/service_locator.dart';
 import 'package:flutter_demo/theme.dart';
@@ -47,6 +48,9 @@ class _MyAppState extends State<MyApp> {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: appState.locale,
           theme: materialTheme.light(),
           darkTheme: materialTheme.dark(),
           themeMode: appState.theme,

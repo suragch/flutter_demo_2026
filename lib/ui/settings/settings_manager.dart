@@ -6,6 +6,7 @@ class SettingsManager {
   final appState = getIt<AppState>();
 
   ThemeMode get currentTheme => appState.theme;
+  Locale get currentLocale => appState.locale;
 
   String get currentThemeTitle {
     if (currentTheme == ThemeMode.dark) {
@@ -19,5 +20,9 @@ class SettingsManager {
 
   void setTheme(ThemeMode theme) {
     appState.setThemeMode(theme);
+  }
+
+  void setLocale(Locale locale) {
+    appState.setLocale(locale);
   }
 }

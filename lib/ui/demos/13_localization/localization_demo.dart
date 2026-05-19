@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/l10n/app_localizations.dart';
 
 class LocalizationDemo extends StatefulWidget {
   const LocalizationDemo({super.key});
@@ -11,7 +12,13 @@ class _LocalizationDemoState extends State<LocalizationDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Hello world!', style: TextStyle(fontSize: 30))),
+      appBar: AppBar(),
+      body: Center(
+        child: Text(
+          AppLocalizations.of(context)!.helloWorld,
+          style: TextStyle(fontSize: 30),
+        ),
+      ),
     );
   }
 }
