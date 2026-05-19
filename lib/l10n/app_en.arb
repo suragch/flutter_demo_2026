@@ -1,4 +1,8 @@
 {
+    "appLanguage": "English",
+    "@appLanguage": {
+        "description": "This is the language setting for the app"
+    },
     "helloWorld": "Hello world!",
     "@helloWorld": {
         "description": "This is a greeting on the Localization Demo page"

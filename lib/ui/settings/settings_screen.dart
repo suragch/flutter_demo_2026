@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/l10n/app_localizations.dart';
 import 'package:flutter_demo/ui/settings/settings_manager.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -29,7 +30,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               ListTile(
                 title: Text('App language'),
-                subtitle: Text("English"),
+                subtitle: Text(AppLocalizations.of(context)!.appLanguage),
                 onTap: () async {
                   await _showLanguageDialog();
                 },

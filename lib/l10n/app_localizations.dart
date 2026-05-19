@@ -98,6 +98,12 @@ abstract class AppLocalizations {
     Locale('mn'),
   ];
 
+  /// This is the language setting for the app
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get appLanguage;
+
   /// This is a greeting on the Localization Demo page
   ///
   /// In en, this message translates to:

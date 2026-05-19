@@ -9,5 +9,8 @@ class AppLocalizationsMn extends AppLocalizations {
   AppLocalizationsMn([String locale = 'mn']) : super(locale);
 
   @override
+  String get appLanguage => 'Mongolian';
+
+  @override
   String get helloWorld => 'Сайн уу дэлхий!';
 }
